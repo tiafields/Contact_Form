@@ -5,19 +5,33 @@
 }
 /* Custom Properties */
 :root {
-    --font-family: 'Poppins'
+    --font-family: 'Poppins';
+    --color-primary: #706dfb;
 }
 
 body{
-    font-family:var(--font-family);
-    background: #706dfb;
+    font-family: var(--font-family);
+    background: var(--color-primary);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
 } 
 .contact-container{
-    height:100vh;
     display: flex;
-    align-items: center;
-    justify-content: space-evenly ;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    gap: 50px;
 }
+
+@media screen and (min-width: 1280px) {
+    .contact-container {
+        flex-direction: row;
+    }
+}
+
 /* Form Styling */
 .contact-right{
     display:flex;
@@ -67,20 +81,12 @@ body{
     color: white;
     font-family: var(--font-family);
 }
-.contact-left-title h2{
+.contact-left-title {
     font-weight:600;
     color: #ffffff;
     font-size:40px;
     margin-bottom: 5px;
 }
-.contact-left{
-    width: 800px;
-    margin-right: -500px;
-    
+.contact-left p {
+    color:  oklch(from var(--color-primary) calc(l - 40) c h);
 }
-
-
-
-
-
-
